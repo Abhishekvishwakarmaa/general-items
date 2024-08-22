@@ -1,3 +1,19 @@
+-------------------------
 {% if templeat == 'index' %}
 
 {% endif %}
+
+----------------------------
+{% assign descriptions = product.description | split: "<!-- split -->" %}
+<ul class="accordion-list">
+   <li class="custom-tab-li">
+    <h3>Product Description</h3>
+    <div class="answer">
+      <p>{{ descriptions[0] | split: "Product Description:" }}</p>
+    </div>
+  </li>
+  <li class="custom-tab-li">
+    <h3>Specifications</h3>
+    <div class="answer"><p>{{ descriptions[1] | split: "Specifications:" }}</p></div> 
+  </li>
+</ul>
